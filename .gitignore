@@ -1,0 +1,4 @@
+# ignore glide package
+vendor
+*.iml
+/.idea

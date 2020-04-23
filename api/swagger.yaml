@@ -1,0 +1,93 @@
+---
+swagger: "2.0"
+info:
+  description: "This is an API server for a developer web portfolio. Used @jose-rodrigues.info"
+  version: "1.0.0"
+  title: "JSR Info"
+  contact:
+    email: "jsr@jose-rodrigues.info"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "api.jose-rodrigues.info"
+basePath: "/v1/devinfo"
+tags:
+  - name: "jobs"
+    description: "Everything about the job experience of the developer"
+  - name: "projects"
+    description: "Everything about the projects made by the developer"
+schemes:
+  - "https"
+paths:
+  /jobs:
+    get:
+      tags:
+        - "jobs"
+      summary: "Returns the job experience of the developer"
+      description: "Returns a list with all the jobs the developer had/has"
+      operationId: "getJobs"
+      produces:
+        - "application/json"
+      parameters: []
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Job"
+  /projects:
+    get:
+      tags:
+        - "projects"
+      summary: "Returns developer personal projects"
+      description: "Returns every personal or team project the developer was part\
+        \ of, outside of normal work hours"
+      operationId: "getProjects"
+      produces:
+        - "application/json"
+      parameters: []
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Project"
+definitions:
+  Project:
+    type: "object"
+    required:
+      - "description"
+      - "gitURL"
+      - "name"
+    properties:
+      name:
+        type: "string"
+        description: "the project name"
+      description:
+        type: "string"
+        description: "a short summary of the project"
+      imageURL:
+        type: "string"
+        description: "image url"
+      gitURL:
+        type: "string"
+        description: "github url"
+  Job:
+    type: "object"
+    required:
+      - "description"
+      - "startDate"
+    properties:
+      description:
+        type: "string"
+        description: "job description (tech stack, functions that the developer was responsible for, etc)"
+      startDate:
+        type: "string"
+        format: "date"
+        description: "The start date of the job (ISO 8601)"
+      endDate:
+        type: "string"
+        format: "date"
+        description: "The end date of the job (ISO 8601)"
