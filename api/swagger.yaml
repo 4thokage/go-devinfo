@@ -78,16 +78,20 @@ definitions:
     type: "object"
     required:
       - "description"
+      - "company"
       - "startDate"
     properties:
       description:
         type: "string"
         description: "job description (tech stack, functions that the developer was responsible for, etc)"
+      company:
+        type: "string"
+        description: "company (url) in which the developer worked while doing this job"
       startDate:
         type: "string"
         format: "date"
-        description: "The start date of the job (ISO 8601)"
+        description: "the start date of the job (ISO 8601)"
       endDate:
         type: "string"
         format: "date"
-        description: "The end date of the job (ISO 8601)"
+        description: "the end date of the job (ISO 8601)"

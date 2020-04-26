@@ -16,9 +16,12 @@ type Job struct {
 	// job description (tech stack, functions that the developer was responsible for, etc)
 	Description string `json:"description"`
 
-	// The start date of the job (ISO 8601)
+	// Company (url) in which the developer worked while doing this job
+	Company string `json:"company"`
+
+	// the start date of the job (ISO 8601)
 	StartDate string `json:"startDate"`
 
-	// The end date of the job (ISO 8601)
+	// the end date of the job (ISO 8601)
 	EndDate string `json:"endDate,omitempty"`
 }
