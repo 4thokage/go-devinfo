@@ -1,9 +1,9 @@
 package config
 
 import (
-	"log" // to print log
-
 	"github.com/BurntSushi/toml" // to read config.toml
+	"log"
+	"os"
 )
 
 // Config Represents network port, database server and credentials
