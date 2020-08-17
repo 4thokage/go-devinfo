@@ -17,6 +17,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
+// The Route type definition
 type Route struct {
 	Name        string
 	Method      string
@@ -24,8 +25,10 @@ type Route struct {
 	HandlerFunc http.HandlerFunc
 }
 
+// Define new type 'Routes' as an array of 'Route'
 type Routes []Route
 
+// Method responsible for route configuration
 func NewRouter() *mux.Router {
 	router := mux.NewRouter().StrictSlash(true)
 
