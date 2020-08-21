@@ -25,10 +25,10 @@ type Route struct {
 	HandlerFunc http.HandlerFunc
 }
 
-// Define new type 'Routes' as an array of 'Route'
+// Routes is the array of routes
 type Routes []Route
 
-// Method responsible for route configuration
+// NewRouter function defines all route configuration
 func NewRouter() *mux.Router {
 	router := mux.NewRouter().StrictSlash(true)
 
