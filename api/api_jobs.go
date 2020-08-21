@@ -18,6 +18,7 @@ import (
 // GetJobs returns all the jobs of the developer
 func GetJobs(w http.ResponseWriter, _ *http.Request) {
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	payload := GetAllJobs()
 

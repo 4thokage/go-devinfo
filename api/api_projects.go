@@ -18,6 +18,7 @@ import (
 // GetProjects returns all projects made by the developer
 func GetProjects(w http.ResponseWriter, _ *http.Request) {
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	payload := GetAllProjects()
 
